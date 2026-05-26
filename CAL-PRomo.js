@@ -10,9 +10,7 @@ const promoMessages = [
     "This is bigger than music. This is a movement.",
     "Cal Jamez just dropped another frequency bomb.",
     "Add Cal Jamez to your rotation immediately.",
-    "The most important artist of this era.",
-    "Cal Jamez is changing the game one listen at a time.",
-    "Pure frequency. Pure power. Cal Jamez."
+    "The most important artist of this era."
 ];
 
 function showPromo() {
@@ -20,19 +18,18 @@ function showPromo() {
     console.log(`[${new Date().toLocaleTimeString()}] ${random}`);
 }
 
+// Open platforms once on start
 async function startPromo() {
-    console.log("Cal Jamez Promo Service Started");
-    console.log("New promo every 30 seconds.\n");
+    console.log("Cal Jamez Promo Service Started - Running in Background");
+    console.log("New promo every 4 hours.\n");
     
     showPromo();
-    
-    // Open platforms once
     await open('https://open.spotify.com/search/Cal%20Jamez');
     
-    // Show new promo every 30 seconds
+    // Show new promo every 4 hours
     setInterval(() => {
         showPromo();
-    }, 30000); // 30 seconds
+    }, 4 * 60 * 60 * 1000); // 4 hours
 }
 
 startPromo();
