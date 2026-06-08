@@ -2,6 +2,7 @@ import React, { useState, useRef } from 'react';
 import { View, Text, TextInput, ScrollView, TouchableOpacity, StatusBar, Alert } from 'react-native';
 import { SafeAreaView, SafeAreaProvider } from 'react-native-safe-area-context';
 import * as Speech from 'expo-speech';
+import "./global.css";
 
 export default function App() {
   const [logs, setLogs] = useState([]);
