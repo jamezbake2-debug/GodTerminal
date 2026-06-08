@@ -1,7 +1,8 @@
 import React, { useState, useRef } from 'react';
 import { View, Text, TextInput, ScrollView, TouchableOpacity, StatusBar, Alert } from 'react-native';
-import { SafeAreaView } from 'react-native-safe-area-context';
+import { SafeAreaView, SafeAreaProvider } from 'react-native-safe-area-context';
 import * as Speech from 'expo-speech';
+import "./global.css";
 
 export default function App() {
   const [logs, setLogs] = useState([]);
@@ -55,6 +56,7 @@ export default function App() {
   };
 
   return (
+    <SafeAreaProvider>
     <SafeAreaView className="flex-1 bg-black">
       <StatusBar barStyle="light-content" />
       <View className="absolute inset-0 bg-gradient-to-b from-purple-950 via-black to-black" />
@@ -114,5 +116,6 @@ export default function App() {
         </View>
       </View>
     </SafeAreaView>
+    </SafeAreaProvider>
   );
 }
